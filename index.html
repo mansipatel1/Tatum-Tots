@@ -14,7 +14,7 @@
   </header>
 
   <main>
-    <form id="flickForm">
+     <form id="flickForm">
       <div class="input-group">
         <input
           type="text"
@@ -33,9 +33,20 @@
           </button>
         </div>
       </div>
-    </form>
-    <ul id="flickList"></ul>
-  </main>
+     </form>
+
+    
+    <ul id="flickList" class="no-bullet">
+        <li class="flick grid-x">
+           <span class="flickName">Jupiter Ascending</span> 
+           <span class "actions cell shrink">
+               <button class="button">fav</button>
+               <button class="button">del</button>
+           </span>
+          
+        </li>
+    </ul>
+ </main>
  
 
   <script src="index.js"></script>

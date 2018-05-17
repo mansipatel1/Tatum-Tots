@@ -27,9 +27,9 @@ const app = {
             name: f.flickName.value,
         }
 
-        this.flicks.push(flicks);
+        this.flicks.unshift(flick);
         const item = this.renderListItem(flick);
-        this.list.appendChild(item);
+        this.list.insertBefore(item,this.list.firstChild);
 
         f.reset();
     },

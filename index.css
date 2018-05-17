@@ -1,5 +1,17 @@
 main {
     width: 80%; 
     margin: 1rem auto;
-    
+
+}
+li{
+    list-style: none;
+}
+
+.actions .button {
+    margin-bottom: 0;
+    margin-top:0;
+}
+
+.flickName {
+    margin: 0 0.75rem;
 }
