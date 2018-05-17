@@ -6,7 +6,9 @@ main {
 li{
     list-style: none;
 }
-
+#title {
+  text-align: center;
+}
 .actions .button {
     margin-bottom: 0;
     margin-top:0;
@@ -18,4 +20,5 @@ li{
 
 .template {
     display: none;
+
 }
