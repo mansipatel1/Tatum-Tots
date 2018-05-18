@@ -23,6 +23,13 @@ const app = {
   
       return item
     },
+
+    deleteItem(ev){
+        ev.preventDefault();
+        del = ev.target;
+        del.parentNode.remove();
+        flicks.splice(flicks.indexOf(flicks));
+    },
   
     handleSubmit(ev) {
       const f = ev.target
