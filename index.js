@@ -1,42 +1,41 @@
-const app = {
-    init(selectors) {
-      this.flicks = []
-      this.max = 0
-      this.list = document.querySelector(selectors.listSelector)
-      this.template = document.querySelector(selectors.templateSelector)
+class App {
+    constructor(selectors) {
+      this.flicks = [];
+      this.max = 0;
+      this.list = document.querySelector(selectors.listSelector);
+      this.template = document.querySelector(selectors.templateSelector);
   
       document
         .querySelector(selectors.formSelector)
         .addEventListener('submit', ev => {
-          ev.preventDefault()
-          this.handleSubmit(ev)
+          ev.preventDefault();
+          this.handleSubmit(ev);
         })
-    },
+    }
     
     removeFlick(flick, ev) {
-        const item = ev.target.closest('.flick')
-        item.remove()
-       // const i = this.flicks.indexOf(flick)
-        //this.flicks.splice(i, 1)
-      },
+        //remove from the DOM
+        const item = ev.target.closest('.flick'); 
+        item.remove();
+        const i = this.flicks.indexOf(flick); //search for index in the array
+        this.flicks.splice(i, 1); //spliced at that index with array.splice
+
+      }
 
     renderListItem(flick) {
-      const item = this.template.cloneNode(true)
-      item.classList.remove('template')
-      item.dataset.id = flick.id
+      const item = this.template.cloneNode(true);
+      item.classList.remove('template');
+      item.dataset.id = flick.id;
       item
         .querySelector('.flickName')
-        .textContent = flick.name
+        .textContent = flick.name;
 
         item
         .querySelector('.remove.button')
-        .addEventListener(
-          'click',
-          this.removeFlick.bind(this, flick)
-        )
-  
+        .addEventListener('click',this.removeFlick.bind(this, flick))
+
       return item
-    },
+    }
 
   
     handleSubmit(ev) {
@@ -55,6 +54,8 @@ const app = {
         }
   }
   
+  const app = new App();
+
   app.init({
     formSelector: '#flickForm',
     listSelector: '#flickList',
